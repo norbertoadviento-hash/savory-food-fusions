@@ -11,7 +11,7 @@ Static website for the Savory Food Fusions food truck. Hosted on GitHub Pages.
 - **Prices:** search `$—` in `index.html` and replace.
 - **Weekly schedule:** edit the `.schedule__row` lines under `#find`.
 - **Phone/email:** edit the `#contact` section (both the `href` and the visible text).
-- **Contact form:** create a free form at formspree.io and replace `YOUR_FORM_ID`.
+- **Contact form:** submits via formsubmit.co to catering@savoryfoodfusion.com. First submission sends a one-time activation email to that inbox — click the link once..
 - **Social links:** replace the Instagram/Facebook URLs under `#find`.
 
 ## Deploy
