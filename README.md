@@ -18,4 +18,4 @@ Static website for the Savory Food Fusions food truck. Hosted on GitHub Pages.
 Pushes to `main` publish automatically via GitHub Pages (Settings → Pages → Deploy from branch → main / root).
 
 ## Email
-Business Gmail: SavoryFoodFusions@gmail.com. Set Porkbun email forwarding so orders@ and catering@savoryfoodfusions.com both deliver there.
+Business Gmail: SavoryFoodFusions@gmail.com. Set Porkbun email forwarding so orders@, catering@ and contact@savoryfoodfusions.com all deliver there.
