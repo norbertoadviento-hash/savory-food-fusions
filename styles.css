@@ -116,6 +116,9 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
 .card__title h4 { font-size: 1.15rem; }
 .price { font-weight: 800; color: var(--red); white-space: nowrap; }
 .card__body p { font-size: .95rem; color: var(--muted); }
+.card__list { list-style: none; margin: .4rem 0 .5rem; font-size: .95rem; color: var(--muted); }
+.card__list li { padding-left: .9rem; position: relative; margin-bottom: .2rem; }
+.card__list li::before { content: "•"; position: absolute; left: 0; color: var(--red); }
 .tag {
   display: inline-block; margin-top: .7rem; font-size: .7rem; font-weight: 800; letter-spacing: .1em;
   text-transform: uppercase; padding: .2rem .6rem; border-radius: 999px;
