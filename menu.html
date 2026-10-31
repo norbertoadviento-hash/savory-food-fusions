@@ -13,25 +13,28 @@
     :root { --red:#c8352b; --orange:#e8a030; --cream:#f7efe3; --ink:#1f1a16; --muted:#6f655a; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Nunito Sans',system-ui,sans-serif; color:var(--ink); background:#d9cdb9; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-    .sheet { background:var(--cream); max-width:8.5in; margin:1.5rem auto; padding:.4in .55in .35in; min-height:11in; position:relative; box-shadow:0 20px 50px -20px rgba(0,0,0,.5); }
+    .sheet { background:var(--cream); max-width:8.5in; margin:1.5rem auto; padding:.35in .5in .3in; min-height:11in; position:relative; box-shadow:0 20px 50px -20px rgba(0,0,0,.5); }
     .head { text-align:center; margin-bottom:.22in; }
-    .head img { width:2.1in; }
+    .head img { width:1.9in; }
     .head p { font-weight:800; letter-spacing:.2em; text-transform:uppercase; font-size:.72rem; color:var(--red); margin-top:.1in; }
     .cols { display:grid; grid-template-columns:1fr 1fr; gap:0 .5in; }
     h2 { font-family:'Alfa Slab One',serif; font-weight:400; font-size:1.05rem; letter-spacing:.1em; text-transform:uppercase; color:var(--orange); border-bottom:2px dashed var(--orange); padding-bottom:.08in; margin:.16in 0 .1in; }
     .cols > section:first-child h2:first-child, .cols > section:last-child h2:first-child { margin-top:0; }
-    .item { display:grid; grid-template-columns:1fr auto; gap:.06in .2in; margin-bottom:.1in; align-items:baseline; }
+    .item { display:grid; grid-template-columns:.78in 1fr auto; gap:.04in .14in; margin-bottom:.1in; align-items:start; }
+    .item img { grid-row:1 / span 4; width:.78in; height:.78in; object-fit:cover; border-radius:10px; box-shadow:0 4px 10px -4px rgba(0,0,0,.5); }
+    .item.noimg { grid-template-columns:1fr auto; }
+    .item.noimg p { grid-column:1 / -1; }
     .item h3 { font-family:'Alfa Slab One',serif; font-weight:400; font-size:1rem; }
     .item .price { font-weight:800; color:var(--red); white-space:nowrap; }
-    .item p { grid-column:1 / -1; font-size:.84rem; color:var(--muted); line-height:1.4; }
-    .item ul { grid-column:1 / -1; list-style:none; font-size:.84rem; color:var(--muted); line-height:1.45; }
+    .item p { grid-column:2 / -1; font-size:.8rem; color:var(--muted); line-height:1.4; }
+    .item ul { grid-column:2 / -1; list-style:none; font-size:.84rem; color:var(--muted); line-height:1.45; }
     .item li { padding-left:.14in; position:relative; }
     .item li::before { content:"•"; position:absolute; left:0; color:var(--red); }
     .hot { display:inline-block; font-size:.62rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--red); background:#fde3df; padding:.02in .08in; border-radius:999px; margin-left:.08in; vertical-align:middle; }
     .foot { margin-top:.2in; padding-top:.12in; border-top:2px solid var(--orange); display:flex; justify-content:space-between; align-items:center; gap:.3in; font-size:.8rem; }
     .foot b { font-family:'Alfa Slab One',serif; font-weight:400; font-size:.95rem; display:block; }
     .foot .qr { display:flex; gap:.15in; align-items:center; }
-    .foot .qr img { width:.85in; height:.85in; }
+    .foot .qr img { width:.8in; height:.8in; }
     .foot .qr span { font-size:.62rem; text-align:center; display:block; margin-top:.03in; color:var(--muted); }
     .note { text-align:center; font-size:.72rem; color:var(--muted); font-style:italic; margin-top:.12in; }
     .toolbar { text-align:center; padding:.6rem; }
@@ -41,7 +44,7 @@
   </style>
 </head>
 <body>
-  <div class="toolbar"><a href="index.html">← Back to site</a><button onclick="window.print()">Print / Save PDF</button></div>
+  <div class="toolbar"><a href="index.html">← Back to site</a><a href="menu.pdf" download>Download PDF</a><button onclick="window.print()">Print</button></div>
   <div class="sheet">
     <header class="head">
       <img src="images/logo.png" alt="Savory Food Fusions">
@@ -53,6 +56,7 @@
         <h2>Mains</h2>
 
         <div class="item">
+          <img src="images/hero-chicken-trio.jpg" alt="">
           <h3>Asian Chicken — Pick Your Style</h3><span class="price">$—</span>
           <p>Crispy chicken your way:</p>
           <ul>
@@ -64,22 +68,26 @@
         </div>
 
         <div class="item">
+          <img src="images/hero-jerk-chicken.jpg" alt="">
           <h3>Jerk Chicken <span class="hot">Spicy</span></h3><span class="price">$—</span>
           <p>Char-grilled chicken in Jamaican jerk marinade — allspice, thyme, scotch bonnet — with house jerk sauce.</p>
         </div>
 
         <div class="item">
+          <img src="images/hero-chicken-gyro.jpg" alt="">
           <h3>Chicken Gyro</h3><span class="price">$—</span>
           <p>Seasoned chicken, lettuce, tomato, cucumber and red onion in warm pita with tzatziki.</p>
         </div>
 
         <div class="item">
+          <img src="images/hero-tuscan-pasta.jpg" alt="">
           <h3>Tuscan Pasta</h3><span class="price">$—</span>
           <p>Penne in creamy sun-dried tomato sauce with spinach, with two slices of cheesy garlic bread.</p>
         </div>
 
         <h2>Rice</h2>
         <div class="item">
+          <img src="images/hero-rice-trio.jpg" alt="">
           <h3>Pick Your Rice</h3><span class="price">$—</span>
           <ul>
             <li>Signature Dominican Rice</li>
@@ -93,26 +101,30 @@
       <section>
         <h2>Street Corn</h2>
         <div class="item">
+          <img src="images/hero-classic-elote.jpg" alt="">
           <h3>Classic Elote en Vaso</h3><span class="price">$—</span>
           <p>Sweet corn, crema, mayo, cotija and chile-lime.</p>
         </div>
         <div class="item">
+          <img src="images/hero-hot-cheeto-elote.jpg" alt="">
           <h3>Street Corn Hot Cheetos <span class="hot">Spicy</span></h3><span class="price">$—</span>
           <p>Creamy street corn buried under crushed Flamin' Hot Cheetos.</p>
         </div>
 
         <h2>Sweets</h2>
         <div class="item">
+          <img src="images/hero-candied-grapes.jpg" alt="">
           <h3>Candied Grapes</h3><span class="price">$—</span>
           <p>Fresh grapes in a crunchy candy shell with coconut, sprinkles and drizzle. Custom colors for events.</p>
         </div>
         <div class="item">
+          <img src="images/hero-cornbread.jpg" alt="">
           <h3>Honey Butter Corn Bread</h3><span class="price">$—</span>
           <p>Thick-cut, golden-crusted and moist.</p>
         </div>
 
         <h2>Catering</h2>
-        <div class="item">
+        <div class="item noimg">
           <h3>Bring the truck to your event</h3>
           <p>Birthdays, quinceañeras, office lunches, unit events, weddings. Full-service truck or drop-off trays. Custom-color candied grapes available.</p>
           <p><strong>catering@savoryfoodfusions.com</strong></p>
@@ -127,6 +139,7 @@
         savoryfoodfusions.com · Veteran-owned · El Paso, TX
       </div>
       <div class="qr">
+        <div><img src="images/qr-menu.png" alt="QR: this menu"><span>Menu</span></div>
         <div><img src="images/qr-website.png" alt="QR: website"><span>Website</span></div>
         <div><img src="images/qr-instagram.png" alt="QR: Instagram"><span>Instagram</span></div>
         <div><img src="images/qr-facebook.png" alt="QR: Facebook"><span>Facebook</span></div>
