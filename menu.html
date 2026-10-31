@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Savory Food Fusions — El Paso, TX</title>
+  <meta name="description" content="Savory Food Fusions food truck menu — El Paso, Texas.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --red:#c8352b; --orange:#e8a030; --cream:#f7efe3; --ink:#1f1a16; --muted:#6f655a; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Nunito Sans',system-ui,sans-serif; color:var(--ink); background:#d9cdb9; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .sheet { background:var(--cream); max-width:8.5in; margin:1.5rem auto; padding:.4in .55in .35in; min-height:11in; position:relative; box-shadow:0 20px 50px -20px rgba(0,0,0,.5); }
+    .head { text-align:center; margin-bottom:.22in; }
+    .head img { width:2.1in; }
+    .head p { font-weight:800; letter-spacing:.2em; text-transform:uppercase; font-size:.72rem; color:var(--red); margin-top:.1in; }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:0 .5in; }
+    h2 { font-family:'Alfa Slab One',serif; font-weight:400; font-size:1.05rem; letter-spacing:.1em; text-transform:uppercase; color:var(--orange); border-bottom:2px dashed var(--orange); padding-bottom:.08in; margin:.16in 0 .1in; }
+    .cols > section:first-child h2:first-child, .cols > section:last-child h2:first-child { margin-top:0; }
+    .item { display:grid; grid-template-columns:1fr auto; gap:.06in .2in; margin-bottom:.1in; align-items:baseline; }
+    .item h3 { font-family:'Alfa Slab One',serif; font-weight:400; font-size:1rem; }
+    .item .price { font-weight:800; color:var(--red); white-space:nowrap; }
+    .item p { grid-column:1 / -1; font-size:.84rem; color:var(--muted); line-height:1.4; }
+    .item ul { grid-column:1 / -1; list-style:none; font-size:.84rem; color:var(--muted); line-height:1.45; }
+    .item li { padding-left:.14in; position:relative; }
+    .item li::before { content:"•"; position:absolute; left:0; color:var(--red); }
+    .hot { display:inline-block; font-size:.62rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--red); background:#fde3df; padding:.02in .08in; border-radius:999px; margin-left:.08in; vertical-align:middle; }
+    .foot { margin-top:.2in; padding-top:.12in; border-top:2px solid var(--orange); display:flex; justify-content:space-between; align-items:center; gap:.3in; font-size:.8rem; }
+    .foot b { font-family:'Alfa Slab One',serif; font-weight:400; font-size:.95rem; display:block; }
+    .foot .qr { display:flex; gap:.15in; align-items:center; }
+    .foot .qr img { width:.85in; height:.85in; }
+    .foot .qr span { font-size:.62rem; text-align:center; display:block; margin-top:.03in; color:var(--muted); }
+    .note { text-align:center; font-size:.72rem; color:var(--muted); font-style:italic; margin-top:.12in; }
+    .toolbar { text-align:center; padding:.6rem; }
+    .toolbar a, .toolbar button { font:inherit; font-weight:800; background:var(--red); color:#fff; border:0; border-radius:999px; padding:.55rem 1.2rem; margin:0 .25rem; cursor:pointer; text-decoration:none; }
+    @media print { body { background:#fff; } .sheet { margin:0; box-shadow:none; max-width:none; min-height:0; height:11in; overflow:hidden; } .toolbar { display:none; } @page { size:letter; margin:0; } }
+    @media (max-width:640px) { .sheet { padding:.4in .35in; min-height:0; } .cols { grid-template-columns:1fr; } .foot { flex-direction:column; text-align:center; } }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><a href="index.html">← Back to site</a><button onclick="window.print()">Print / Save PDF</button></div>
+  <div class="sheet">
+    <header class="head">
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <p>El Paso, Texas · Food Truck Menu</p>
+    </header>
+
+    <div class="cols">
+      <section>
+        <h2>Mains</h2>
+
+        <div class="item">
+          <h3>Asian Chicken — Pick Your Style</h3><span class="price">$—</span>
+          <p>Crispy chicken your way:</p>
+          <ul>
+            <li><strong>General Tso</strong> — sweet-and-spicy, toasted chiles <span class="hot">Spicy</span></li>
+            <li><strong>Teriyaki</strong> — sweet soy, green onion</li>
+            <li><strong>Orange</strong> — sticky citrus glaze</li>
+          </ul>
+          <p>Served with your choice of rice.</p>
+        </div>
+
+        <div class="item">
+          <h3>Jerk Chicken <span class="hot">Spicy</span></h3><span class="price">$—</span>
+          <p>Char-grilled chicken in Jamaican jerk marinade — allspice, thyme, scotch bonnet — with house jerk sauce.</p>
+        </div>
+
+        <div class="item">
+          <h3>Chicken Gyro</h3><span class="price">$—</span>
+          <p>Seasoned chicken, lettuce, tomato, cucumber and red onion in warm pita with tzatziki.</p>
+        </div>
+
+        <div class="item">
+          <h3>Tuscan Pasta</h3><span class="price">$—</span>
+          <p>Penne in creamy sun-dried tomato sauce with spinach, with two slices of cheesy garlic bread.</p>
+        </div>
+
+        <h2>Rice</h2>
+        <div class="item">
+          <h3>Pick Your Rice</h3><span class="price">$—</span>
+          <ul>
+            <li>Signature Dominican Rice</li>
+            <li>White Rice</li>
+            <li>Fried Rice — egg, corn, carrots, green beans</li>
+          </ul>
+          <p>Side or base.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Street Corn</h2>
+        <div class="item">
+          <h3>Classic Elote en Vaso</h3><span class="price">$—</span>
+          <p>Sweet corn, crema, mayo, cotija and chile-lime.</p>
+        </div>
+        <div class="item">
+          <h3>Street Corn Hot Cheetos <span class="hot">Spicy</span></h3><span class="price">$—</span>
+          <p>Creamy street corn buried under crushed Flamin' Hot Cheetos.</p>
+        </div>
+
+        <h2>Sweets</h2>
+        <div class="item">
+          <h3>Candied Grapes</h3><span class="price">$—</span>
+          <p>Fresh grapes in a crunchy candy shell with coconut, sprinkles and drizzle. Custom colors for events.</p>
+        </div>
+        <div class="item">
+          <h3>Honey Butter Corn Bread</h3><span class="price">$—</span>
+          <p>Thick-cut, golden-crusted and moist.</p>
+        </div>
+
+        <h2>Catering</h2>
+        <div class="item">
+          <h3>Bring the truck to your event</h3>
+          <p>Birthdays, quinceañeras, office lunches, unit events, weddings. Full-service truck or drop-off trays. Custom-color candied grapes available.</p>
+          <p><strong>catering@savoryfoodfusions.com</strong></p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <div>
+        <b>Order / Text: (931) 338-0215</b>
+        orders@savoryfoodfusions.com<br>
+        savoryfoodfusions.com · Veteran-owned · El Paso, TX
+      </div>
+      <div class="qr">
+        <div><img src="images/qr-website.png" alt="QR: website"><span>Website</span></div>
+        <div><img src="images/qr-instagram.png" alt="QR: Instagram"><span>Instagram</span></div>
+        <div><img src="images/qr-facebook.png" alt="QR: Facebook"><span>Facebook</span></div>
+      </div>
+    </footer>
+    <p class="note">Menu rotates. Prices and availability set at the truck.</p>
+  </div>
+</body>
+</html>
