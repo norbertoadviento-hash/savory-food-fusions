@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Savory Food Fusions — TV Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211A15; --ink-soft:#332619; --paper:#FBF3E4; --paper-dim:#EFE2C8;
+    --chili:#C6401F; --marigold:#E7A23A; --avocado:#8FA35A; --line:rgba(251,243,228,.16);
+    --display:'Bricolage Grotesque','Inter Display','Arial Black',Impact,sans-serif;
+    --body:'Work Sans','Inter',Arial,Helvetica,sans-serif;
+    --script:'Caveat','Segoe Script','Brush Script MT',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:#000;overflow:hidden;cursor:none}
+  /* 1920x1080 stage scaled to whatever screen it's on */
+  .stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(231,162,58,.18), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(198,64,31,.22), transparent 60%),
+      var(--ink);
+    color:var(--paper);font-family:var(--body);}
+  .slide{position:absolute;inset:0;padding:44px 64px 40px;display:flex;flex-direction:column;opacity:0;transition:opacity .8s ease}
+  .slide.active{opacity:1}
+
+  header{display:flex;align-items:center;gap:26px;padding-bottom:22px;border-bottom:2px solid var(--line)}
+  header img{height:112px;width:112px;border-radius:50%;object-fit:cover;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+  .brand{font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:.02em;line-height:1}
+  .brand small{display:block;font-family:var(--script);font-weight:700;font-size:34px;color:var(--marigold);letter-spacing:0;margin-top:6px}
+  .spacer{flex:1}
+  .hdr-right{text-align:right}
+  .hdr-right .title{font-family:var(--display);font-weight:800;font-size:60px;line-height:1;color:var(--paper)}
+  .hdr-right .title span{color:var(--chili)}
+  .hdr-right .handle{font-family:var(--script);font-size:32px;color:var(--marigold);margin-top:8px}
+
+  .grid{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:22px 44px;padding-top:22px;min-height:0}
+  .group{display:grid;grid-template-columns:240px 1fr;gap:26px;align-items:center;background:rgba(251,243,228,.045);border:1px solid var(--line);border-radius:18px;padding:14px 24px 14px 14px;min-height:0}
+  .group .photo{width:240px;height:320px;border-radius:12px;overflow:hidden;background:#000;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  .group .photo img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;left:12px;top:12px;background:var(--chili);color:#fff;font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+  .group h2{font-family:var(--display);font-weight:800;font-size:54px;line-height:1;letter-spacing:.01em;margin-bottom:8px}
+  .group .sub{font-family:var(--script);font-weight:700;font-size:30px;color:var(--avocado);margin-bottom:14px}
+  .group ul{list-style:none}
+  .group li{font-size:32px;font-weight:600;line-height:1.25;padding:5px 0 5px 34px;position:relative;color:var(--paper)}
+  .group li::before{content:"";position:absolute;left:4px;top:.72em;width:14px;height:14px;border-radius:50%;background:var(--chili)}
+  .group li small{display:block;font-size:22px;font-weight:500;color:var(--paper-dim);opacity:.8;margin-top:2px}
+
+  footer{margin-top:18px;padding-top:16px;border-top:2px solid var(--line);display:flex;align-items:center;gap:40px;font-size:28px;font-weight:600}
+  footer .lbl{font-family:var(--script);font-size:32px;color:var(--marigold);font-weight:700}
+  footer .sep{color:var(--chili);padding:0 6px}
+  footer .dots{margin-left:auto;display:flex;gap:10px}
+  footer .dots i{width:14px;height:14px;border-radius:50%;background:var(--line);display:block}
+  footer .dots i.on{background:var(--marigold)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- SLIDE 1 -->
+  <section class="slide active" data-slide="1">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="grid">
+      <div class="group">
+        <div class="photo"><span class="badge">Mexican</span><img src="images/tray-tacos.jpg" alt=""></div>
+        <div><h2>TACOS</h2><div class="sub">pick your style</div>
+          <ul><li>Jerk Chicken Tacos <small>w/ mango pico</small></li><li>Steak Street Tacos <small>w/ cilantro &amp; onions</small></li><li>QuesaBirria Tacos (Beef) <small>w/ consomé</small></li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Nachos</span><img src="images/tray-nachos.jpg" alt=""></div>
+        <div><h2>LOADED NACHOS</h2><div class="sub">pick your protein</div>
+          <ul><li>Ground Beef</li><li>Jerk Chicken</li><li>Steak</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Street Corn</span><img src="images/tray-corn.jpg" alt=""></div>
+        <div><h2>STREET CORN</h2><div class="sub">pick your style</div>
+          <ul><li>Original Street Corn</li><li>Hot Cheetos Street Corn</li><li>Loaded Steak Street Corn</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Entrées</span><img src="images/tray-entrees.jpg" alt=""></div>
+        <div><h2>ENTRÉES</h2><div class="sub">pick your protein</div>
+          <ul><li>Pollo Guisado</li><li>Jerk Chicken</li><li>Carne Guisado</li></ul></div>
+      </div>
+    </div>
+    <footer>
+      <span class="lbl">Sauces &amp; Salsas</span><span>Jerk Sauce <i class="sep">·</i> Pico de Gallo <i class="sep">·</i> Avocado Salsa <i class="sep">·</i> Spicy Salsa</span>
+      <span class="dots"><i class="on"></i><i></i></span>
+    </footer>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide" data-slide="2">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="grid">
+      <div class="group">
+        <div class="photo"><span class="badge">Italian</span><img src="images/tray-pasta.jpg" alt=""></div>
+        <div><h2>PASTA</h2><div class="sub">pick your pasta</div>
+          <ul><li>Tuscan Pasta</li><li>Creamy Mac &amp; Cheese</li><li>Meat Sauce Pasta</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Salads</span><img src="images/tray-salads.jpg" alt=""></div>
+        <div><h2>SALADS</h2><div class="sub">pick your salad</div>
+          <ul><li>Caesar Salad</li><li>Southern Potato Salad</li><li>House Salad</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Sides</span><img src="images/tray-sides.jpg" alt=""></div>
+        <div><h2>SIDES</h2><div class="sub">pick your side</div>
+          <ul><li>BBQ Beans</li><li>Cornbread</li><li>Spanish Beans</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Snacks</span><img src="images/tray-snacks.jpg" alt=""></div>
+        <div><h2>SNACKS</h2><div class="sub">pick your snack</div>
+          <ul><li>Chicken Bites</li><li>Pizza Bagel <small>cheese or pepperoni</small></li><li>Cheese Quesadilla <small>add chicken or shredded beef</small></li></ul></div>
+      </div>
+    </div>
+    <footer>
+      <span class="lbl">Drinks &amp; Extras</span><span>Snapple <i class="sep">·</i> Bottled Water <i class="sep">·</i> Candied Grape</span>
+      <span class="dots"><i></i><i class="on"></i></span>
+    </footer>
+  </section>
+</div>
+
+<script>
+  // Fit the 1920x1080 stage to any screen (TV, laptop, tablet)
+  function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById('stage').style.setProperty('--s',s);}
+  addEventListener('resize',fit);fit();
+
+  // Rotate slides. ?slide=1 or ?slide=2 locks to one slide; ?secs=15 changes the timing.
+  var q=new URLSearchParams(location.search),slides=document.querySelectorAll('.slide'),i=0,
+      lock=parseInt(q.get('slide'),10),secs=parseInt(q.get('secs'),10)||10;
+  function show(n){slides.forEach(function(s,k){s.classList.toggle('active',k===n)});i=n;}
+  if(lock>=1&&lock<=slides.length){show(lock-1);}
+  else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
+  // Space/arrow keys step manually (handy on a remote with a keyboard or a laptop)
+  addEventListener('keydown',function(e){if(e.key===' '||e.key==='ArrowRight')show((i+1)%slides.length);if(e.key==='ArrowLeft')show((i-1+slides.length)%slides.length);});
+</script>
+</body>
+</html>
