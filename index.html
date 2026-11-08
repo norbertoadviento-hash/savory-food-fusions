@@ -159,6 +159,12 @@
   .ticket .photo{position:relative;aspect-ratio:4/3;overflow:hidden;}
   .ticket .photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
   .ticket:hover .photo img{transform:scale(1.06);}
+  .ticket.combo .photo{aspect-ratio:3/4;background:#000;}
+  .ticket.combo .photo img{object-fit:cover;object-position:center;}
+  .picks{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;}
+  .picks li{position:relative;padding-left:18px;font-size:.92rem;line-height:1.35;}
+  .picks li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--chili,#c0392b);}
+  .picks small{opacity:.7;font-size:.85em;}
   .ticket .badge{
     position:absolute;top:12px;left:12px;background:var(--chili);color:var(--paper);
     font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
@@ -340,219 +346,115 @@
 
       <div class="menu-grid">
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Italian</span><img src="images/tuscan-pasta-new.jpg" alt="Tuscan pasta with spinach, sun-dried tomato, and parmesan"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Mexican</span><img src="images/tray-tacos.jpg" alt="Tacos tray"></div>
           <div class="body">
-            <h3>Tuscan Pasta</h3>
-            <p>Penne tossed with sun-dried tomato, spinach, and parmesan cheese.</p>
-            <div class="price-row"><span class="flavor">parmesan finish</span></div>
+            <h3>Tacos</h3>
+            <p>Pick your style — three ways, served street-style.</p>
+            <ul class="picks">
+              <li>Jerk Chicken Tacos w/ Mango Pico</li>
+              <li>Steak Street Tacos w/ Cilantro &amp; Onions</li>
+              <li>QuesaBirria Tacos (Beef) w/ Consomé</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your style</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Italian</span><img src="images/mac-cheese.jpg" alt="Creamy mac and cheese"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Nachos</span><img src="images/tray-nachos.jpg" alt="Loaded Nachos tray"></div>
           <div class="body">
-            <h3>Creamy Mac &amp; Cheese</h3>
-            <p>Classic elbow macaroni in a rich, creamy cheese sauce.</p>
-            <div class="price-row"><span class="flavor">rich &amp; creamy</span></div>
+            <h3>Loaded Nachos</h3>
+            <p>Crispy chips, cheese sauce, pico — pick your protein.</p>
+            <ul class="picks">
+              <li>Ground Beef</li>
+              <li>Jerk Chicken</li>
+              <li>Steak</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your protein</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Italian</span><img src="images/meat-sauce-pasta.jpg" alt="Penne pasta in meat sauce with parmesan"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Street Corn</span><img src="images/tray-corn.jpg" alt="Street Corn tray"></div>
           <div class="body">
-            <h3>Meat Sauce Pasta</h3>
-            <p>Penne tossed in a savory meat sauce, topped with shredded parmesan.</p>
-            <div class="price-row"><span class="flavor">hearty &amp; savory</span></div>
+            <h3>Street Corn</h3>
+            <p>Cotija cheese crumble and chili topping — pick your style.</p>
+            <ul class="picks">
+              <li>Original Street Corn</li>
+              <li>Hot Cheetos Street Corn</li>
+              <li>Loaded Steak Street Corn</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your style</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Street Corn</span><img src="images/elote-original.jpg" alt="Original street corn with cotija cheese crumble and chili topping"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Entrees</span><img src="images/tray-entrees.jpg" alt="Entrées tray"></div>
           <div class="body">
-            <h3>Original Street Corn</h3>
-            <p>With cotija cheese crumble and chili topping.</p>
-            <div class="price-row"><span class="flavor">chili crumble</span></div>
+            <h3>Entrées</h3>
+            <p>Slow-cooked and grilled proteins — pick your plate.</p>
+            <ul class="picks">
+              <li>Pollo Guisado</li>
+              <li>Jerk Chicken</li>
+              <li>Carne Guisado</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your protein</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Street Corn</span><img src="images/elote-hot-cheetos.jpg" alt="Street corn with hot Cheetos, cheese crumble, and chili topping"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Italian</span><img src="images/tray-pasta.jpg" alt="Pasta tray"></div>
           <div class="body">
-            <h3>Hot Cheetos Street Corn</h3>
-            <p>With hot Cheetos, cheese crumble, and chili topping.</p>
-            <div class="price-row"><span class="flavor">crunchy heat</span></div>
+            <h3>Pasta</h3>
+            <p>Made fresh to order — pick your pasta.</p>
+            <ul class="picks">
+              <li>Tuscan Pasta</li>
+              <li>Creamy Mac &amp; Cheese</li>
+              <li>Meat Sauce Pasta</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your pasta</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Street Corn</span><img src="images/elote-steak.jpg" alt="Street corn loaded with steak"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Salads</span><img src="images/tray-salads.jpg" alt="Salads tray"></div>
           <div class="body">
-            <h3>Loaded Steak Street Corn</h3>
-            <p>Topped with seasoned steak, cheese crumble, and chili topping.</p>
-            <div class="price-row"><span class="flavor">steak loaded</span></div>
+            <h3>Salads</h3>
+            <p>Fresh and chilled — pick your salad.</p>
+            <ul class="picks">
+              <li>Caesar Salad</li>
+              <li>Southern Potato Salad</li>
+              <li>House Salad</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your salad</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Snack</span><img src="images/chicken-bites.jpg" alt="Crispy fried chicken bites"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Sides</span><img src="images/tray-sides.jpg" alt="Sides tray"></div>
           <div class="body">
-            <h3>Chicken Bites</h3>
-            <p>Crispy fried chicken bites, golden and crunchy.</p>
-            <div class="price-row"><span class="flavor">crispy &amp; crunchy</span></div>
+            <h3>Sides</h3>
+            <p>Hearty sides to round out the plate — pick your side.</p>
+            <ul class="picks">
+              <li>BBQ Beans</li>
+              <li>Cornbread</li>
+              <li>Spanish Beans</li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your side</span></div>
           </div>
         </article>
 
-        <article class="ticket">
-          <div class="photo"><span class="badge">Snack</span><img src="images/pizza-bagels.jpg" alt="Cheese and pepperoni pizza bagels"></div>
+        <article class="ticket combo">
+          <div class="photo"><span class="badge">Snacks</span><img src="images/tray-snacks.jpg" alt="Snacks tray"></div>
           <div class="body">
-            <h3>Pizza Bagels</h3>
-            <p>Toasted bagels topped with sauce and melted cheese — cheese or pepperoni.</p>
-            <div class="price-row"><span class="flavor">cheese or pepperoni</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Snack</span><img src="images/quesadilla-snack.jpg" alt="Cheese quesadilla, cut into wedges"></div>
-          <div class="body">
-            <h3>Cheese Quesadilla</h3>
-            <p>Melted cheese folded into a grilled tortilla — add chicken or shredded beef.</p>
-            <div class="price-row"><span class="flavor">add chicken or beef</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Mexican</span><img src="images/jerk-chicken-tacos.jpg" alt="Jerk chicken tacos with mango pico de gallo"></div>
-          <div class="body">
-            <h3>Jerk Chicken Tacos</h3>
-            <p>Jerk-spiced chicken topped with fresh mango pico de gallo.</p>
-            <div class="price-row"><span class="flavor">mango pico</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Mexican</span><img src="images/steak-street-tacos.jpg" alt="Steak street tacos with cilantro and onions"></div>
-          <div class="body">
-            <h3>Steak Street Tacos</h3>
-            <p>Grilled steak topped with cilantro and onions.</p>
-            <div class="price-row"><span class="flavor">cilantro &amp; onion</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Mexican</span><img src="images/quesabirria-tacos.jpg" alt="QuesaBirria beef tacos with consome"></div>
-          <div class="body">
-            <h3>QuesaBirria Tacos</h3>
-            <p>Beef birria folded into a cheesy, griddled tortilla, served with consomé.</p>
-            <div class="price-row"><span class="flavor">served w/ consomé</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Nachos</span><img src="images/nachos-ground-beef.jpg" alt="Ground beef nachos with pico de gallo and avocado salsa"></div>
-          <div class="body">
-            <h3>Ground Beef Nachos</h3>
-            <p>Crispy tortilla chips loaded with seasoned ground beef, cheese sauce, pico de gallo, and avocado salsa.</p>
-            <div class="price-row"><span class="flavor">loaded &amp; saucy</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Nachos</span><img src="images/nachos-jerk-chicken.jpg" alt="Jerk chicken nachos with mango pico de gallo"></div>
-          <div class="body">
-            <h3>Jerk Chicken Nachos</h3>
-            <p>Crispy tortilla chips loaded with jerk chicken, cheese sauce, and mango pico de gallo.</p>
-            <div class="price-row"><span class="flavor">sweet &amp; spiced</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Nachos</span><img src="images/nachos-steak.jpg" alt="Steak nachos with pico de gallo"></div>
-          <div class="body">
-            <h3>Steak Nachos</h3>
-            <p>Crispy tortilla chips loaded with grilled steak, cheese sauce, and pico de gallo.</p>
-            <div class="price-row"><span class="flavor">loaded &amp; saucy</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Entree</span><img src="images/pollo-guisado.jpg" alt="Pollo guisado, Dominican stewed chicken"></div>
-          <div class="body">
-            <h3>Pollo Guisado</h3>
-            <p>Dominican-style stewed chicken, slow-braised in savory sofrito.</p>
-            <div class="price-row"><span class="flavor">slow-braised</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Entree</span><img src="images/jerk-chicken.jpg" alt="Grilled jerk chicken with scallions"></div>
-          <div class="body">
-            <h3>Jerk Chicken</h3>
-            <p>Grilled and charred jerk chicken, finished with fresh scallions.</p>
-            <div class="price-row"><span class="flavor">smoky heat</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Entree</span><img src="images/carne-guisado.jpg" alt="Carne guisada, stewed beef with cilantro"></div>
-          <div class="body">
-            <h3>Carne Guisado</h3>
-            <p>Tender stewed beef simmered in a rich savory sauce, topped with fresh cilantro.</p>
-            <div class="price-row"><span class="flavor">slow-braised</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Salad</span><img src="images/caesar-salad.jpg" alt="Caesar salad with croutons and parmesan"></div>
-          <div class="body">
-            <h3>Caesar Salad</h3>
-            <p>Crisp romaine, parmesan, and croutons tossed in classic Caesar dressing.</p>
-            <div class="price-row"><span class="flavor">crisp &amp; classic</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Salad</span><img src="images/potato-salad.jpg" alt="Southern potato salad with paprika"></div>
-          <div class="body">
-            <h3>Southern Potato Salad</h3>
-            <p>Creamy Southern-style potato salad, dusted with paprika.</p>
-            <div class="price-row"><span class="flavor">creamy classic</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Salad</span><img src="images/house-salad.jpg" alt="House salad with cucumber, tomato, onion, and peppers"></div>
-          <div class="body">
-            <h3>House Salad</h3>
-            <p>Fresh greens with cucumber, tomato, red onion, and sweet peppers.</p>
-            <div class="price-row"><span class="flavor">fresh &amp; light</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Side</span><img src="images/bbq-beans.jpg" alt="BBQ beans"></div>
-          <div class="body">
-            <h3>BBQ Beans</h3>
-            <p>Hearty BBQ beans simmered low and slow.</p>
-            <div class="price-row"><span class="flavor">smoky &amp; savory</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Side</span><img src="images/cornbread.jpg" alt="Cornbread slices"></div>
-          <div class="body">
-            <h3>Cornbread</h3>
-            <p>Warm, golden cornbread, sliced and ready to share.</p>
-            <div class="price-row"><span class="flavor">buttery &amp; sweet</span></div>
-          </div>
-        </article>
-
-        <article class="ticket">
-          <div class="photo"><span class="badge">Side</span><img src="images/spanish-beans.jpg" alt="Spanish beans with cilantro"></div>
-          <div class="body">
-            <h3>Spanish Beans</h3>
-            <p>Savory Spanish-style beans simmered with peppers and fresh cilantro.</p>
-            <div class="price-row"><span class="flavor">savory &amp; hearty</span></div>
+            <h3>Snacks</h3>
+            <p>Quick bites — pick your snack.</p>
+            <ul class="picks">
+              <li>Chicken Bites</li>
+              <li>Cheese or Pepperoni Pizza Bagel</li>
+              <li>Cheese Quesadilla <small>(add chicken or shredded beef)</small></li>
+            </ul>
+            <div class="price-row"><span class="flavor">pick your snack</span></div>
           </div>
         </article>
 
@@ -627,18 +529,14 @@
         <p>More from the kitchen — straight off the board.</p>
       </div>
       <div class="strip">
-        <figure><img src="images/tuscan-pasta-new.jpg" alt="Tuscan pasta"><figcaption>Tuscan pasta</figcaption></figure>
-        <figure><img src="images/mac-cheese.jpg" alt="Creamy mac & cheese"><figcaption>Creamy mac &amp; cheese</figcaption></figure>
-        <figure><img src="images/nachos-steak.jpg" alt="Steak nachos"><figcaption>Steak nachos</figcaption></figure>
-        <figure><img src="images/pollo-guisado.jpg" alt="Pollo guisado"><figcaption>Pollo guisado</figcaption></figure>
-        <figure><img src="images/carne-guisado.jpg" alt="Carne guisado"><figcaption>Carne guisado</figcaption></figure>
-        <figure><img src="images/jerk-chicken-tacos.jpg" alt="Jerk chicken tacos"><figcaption>Jerk chicken tacos</figcaption></figure>
-        <figure><img src="images/caesar-salad.jpg" alt="Caesar salad"><figcaption>Caesar salad</figcaption></figure>
-        <figure><img src="images/bbq-beans.jpg" alt="BBQ beans"><figcaption>BBQ beans</figcaption></figure>
-        <figure><img src="images/cornbread.jpg" alt="Cornbread"><figcaption>Cornbread</figcaption></figure>
-        <figure><img src="images/elote-steak.jpg" alt="Loaded steak street corn"><figcaption>Loaded steak street corn</figcaption></figure>
-        <figure><img src="images/pizza-bagels.jpg" alt="Pizza bagels"><figcaption>Pizza bagels</figcaption></figure>
-        <figure><img src="images/house-salad.jpg" alt="House salad"><figcaption>House salad</figcaption></figure>
+        <figure><img src="images/tray-tacos.jpg" alt="Tacos tray"><figcaption>Tacos</figcaption></figure>
+        <figure><img src="images/tray-corn.jpg" alt="Street corn tray"><figcaption>Street corn</figcaption></figure>
+        <figure><img src="images/tray-nachos.jpg" alt="Nachos tray"><figcaption>Nachos</figcaption></figure>
+        <figure><img src="images/tray-entrees.jpg" alt="Entrées tray"><figcaption>Entrées</figcaption></figure>
+        <figure><img src="images/tray-pasta.jpg" alt="Pasta tray"><figcaption>Pasta</figcaption></figure>
+        <figure><img src="images/tray-salads.jpg" alt="Salads tray"><figcaption>Salads</figcaption></figure>
+        <figure><img src="images/tray-sides.jpg" alt="Sides tray"><figcaption>Sides</figcaption></figure>
+        <figure><img src="images/tray-snacks.jpg" alt="Snacks tray"><figcaption>Snacks</figcaption></figure>
       </div>
     </div>
   </section>
