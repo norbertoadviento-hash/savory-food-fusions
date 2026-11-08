@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Savory Food Fusions — TV Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211A15; --ink-soft:#332619; --paper:#FBF3E4; --paper-dim:#EFE2C8;
+    --chili:#C6401F; --marigold:#E7A23A; --avocado:#8FA35A; --line:rgba(251,243,228,.16);
+    --display:'Bricolage Grotesque','Inter Display','Arial Black',Impact,sans-serif;
+    --body:'Work Sans','Inter',Arial,Helvetica,sans-serif;
+    --script:'Caveat','Segoe Script','Brush Script MT',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:#000;overflow:hidden;cursor:none}
+  /* 1920x1080 stage scaled to whatever screen it's on */
+  .stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(231,162,58,.18), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(198,64,31,.22), transparent 60%),
+      var(--ink);
+    color:var(--paper);font-family:var(--body);}
+  .slide{position:absolute;inset:0;padding:44px 64px 40px;display:flex;flex-direction:column;opacity:0;transition:opacity .8s ease}
+  .slide.active{opacity:1}
+
+  header{display:flex;align-items:center;gap:26px;padding-bottom:22px;border-bottom:2px solid var(--line)}
+  header img{height:112px;width:112px;border-radius:50%;object-fit:cover;box-shadow:0 6px 24px rgba(0,0,0,.5)}
+  .brand{font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:.02em;line-height:1}
+  .brand small{display:block;font-family:var(--script);font-weight:700;font-size:34px;color:var(--marigold);letter-spacing:0;margin-top:6px}
+  .spacer{flex:1}
+  .hdr-right{text-align:right}
+  .hdr-right .title{font-family:var(--display);font-weight:800;font-size:60px;line-height:1;color:var(--paper)}
+  .hdr-right .title span{color:var(--chili)}
+  .hdr-right .handle{font-family:var(--script);font-size:32px;color:var(--marigold);margin-top:8px}
+
+  .grid{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:22px 44px;padding-top:22px;min-height:0}
+  .group{display:grid;grid-template-columns:240px 1fr;gap:26px;align-items:center;background:rgba(251,243,228,.045);border:1px solid var(--line);border-radius:18px;padding:14px 24px 14px 14px;min-height:0}
+  .group .photo{width:240px;height:320px;border-radius:12px;overflow:hidden;background:#000;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  .group .photo img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;left:12px;top:12px;background:var(--chili);color:#fff;font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+  .group h2{font-family:var(--display);font-weight:800;font-size:54px;line-height:1;letter-spacing:.01em;margin-bottom:8px}
+  .group .sub{font-family:var(--script);font-weight:700;font-size:30px;color:var(--avocado);margin-bottom:14px}
+  .group ul{list-style:none}
+  .group li{font-size:32px;font-weight:600;line-height:1.25;padding:5px 0 5px 34px;position:relative;color:var(--paper)}
+  .group li::before{content:"";position:absolute;left:4px;top:.72em;width:14px;height:14px;border-radius:50%;background:var(--chili)}
+  .group li small{display:block;font-size:22px;font-weight:500;color:var(--paper-dim);opacity:.8;margin-top:2px}
+
+  footer{margin-top:18px;padding-top:16px;border-top:2px solid var(--line);display:flex;align-items:center;gap:40px;font-size:28px;font-weight:600}
+  footer .lbl{font-family:var(--script);font-size:32px;color:var(--marigold);font-weight:700}
+  footer .sep{color:var(--chili);padding:0 6px}
+  footer .dots{margin-left:auto;display:flex;gap:10px}
+  footer .dots i{width:14px;height:14px;border-radius:50%;background:var(--line);display:block}
+  footer .dots i.on{background:var(--marigold)}
+
+  .items{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:26px;min-height:0}
+  .item{display:flex;flex-direction:column;background:rgba(251,243,228,.045);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .item .photo{height:470px;background:#000;overflow:hidden;position:relative}
+  .item .photo img{width:100%;height:100%;object-fit:cover}
+  .item .cap{padding:22px 28px 26px}
+  .item h3{font-family:var(--display);font-weight:800;font-size:46px;line-height:1.05}
+  .item .note{font-size:26px;color:var(--paper-dim);opacity:.85;margin-top:8px;font-weight:500}
+  .gtitle{display:flex;align-items:baseline;gap:22px;padding-top:26px}
+  .gtitle h2{font-family:var(--display);font-weight:800;font-size:64px;line-height:1}
+  .gtitle .sub{font-family:var(--script);font-weight:700;font-size:36px;color:var(--avocado)}
+  .qrmini{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:24px;color:var(--paper-dim)}
+  .qrmini img{width:84px;height:84px;border-radius:8px;background:var(--paper);padding:4px}
+  .qrs{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:60px;padding:30px 40px 10px;align-items:center;min-height:0}
+  .qr{text-align:center;background:rgba(251,243,228,.045);border:1px solid var(--line);border-radius:24px;padding:40px 30px 36px}
+  .qr img{width:360px;height:360px;background:var(--paper);padding:16px;border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .qr h3{font-family:var(--display);font-weight:800;font-size:48px;margin-top:20px}
+  .qr p{font-size:30px;color:var(--marigold);font-family:var(--script);font-weight:700;margin-top:6px}
+  .qr .url{font-size:24px;color:var(--paper-dim);margin-top:10px;font-family:var(--body)}
+  .big{font-family:var(--display);font-weight:800;font-size:68px;text-align:center;padding-top:26px;line-height:1}
+  .big span{color:var(--chili)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <section class="slide active">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="big">SCAN TO <span>ORDER</span> &amp; FOLLOW</div>
+    <div class="qrs">
+      <div class="qr"><img src="images/qr-website.png" alt=""><h3>Full Menu</h3><p>order info &amp; today's lineup</p><div class="url">savoryfoodfusions.com</div></div>
+      <div class="qr"><img src="images/qr-instagram.png" alt=""><h3>Instagram</h3><p>new plates &amp; pop-up locations</p><div class="url">@savory_food_fusions</div></div>
+      <div class="qr"><img src="images/qr-facebook.png" alt=""><h3>Facebook</h3><p>events &amp; catering updates</p><div class="url">Savory Food Fusions</div></div>
+    </div>
+    <footer><span class="lbl">Catering coming soon</span><span>Party trays, drop-off &amp; full-service — follow for the launch date</span></footer>
+  </section>
+</div>
+<script>
+  function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById('stage').style.setProperty('--s',s);}
+  addEventListener('resize',fit);fit();
+  var q=new URLSearchParams(location.search),slides=document.querySelectorAll('.slide'),i=0,lock=parseInt(q.get('slide'),10),secs=parseInt(q.get('secs'),10)||10;
+  function show(n){slides.forEach(function(s,k){s.classList.toggle('active',k===n)});i=n;}
+  if(lock>=1&&lock<=slides.length){show(lock-1);}else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
+  addEventListener('keydown',function(e){if(e.key===' '||e.key==='ArrowRight')show((i+1)%slides.length);if(e.key==='ArrowLeft')show((i-1+slides.length)%slides.length);});
+</script></body></html>
