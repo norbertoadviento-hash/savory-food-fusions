@@ -59,8 +59,6 @@
 </head>
 <body>
 <div class="stage" id="stage">
-
-  <!-- SLIDE 1 -->
   <section class="slide active" data-slide="1">
     <header>
       <img src="images/logo.png" alt="Savory Food Fusions">
@@ -90,13 +88,8 @@
           <ul><li>Pollo Guisado</li><li>Jerk Chicken</li><li>Carne Guisado</li></ul></div>
       </div>
     </div>
-    <footer>
-      <span class="lbl">Sauces &amp; Salsas</span><span>Jerk Sauce <i class="sep">·</i> Pico de Gallo <i class="sep">·</i> Avocado Salsa <i class="sep">·</i> Spicy Salsa</span>
-      <span class="dots"><i class="on"></i><i></i></span>
-    </footer>
+    <footer><span class="lbl">Sauces &amp; Salsas</span><span>Jerk Sauce <i class="sep">·</i> Pico de Gallo <i class="sep">·</i> Avocado Salsa <i class="sep">·</i> Spicy Salsa</span><span class="dots"><i class=on></i><i></i><i></i></span></footer>
   </section>
-
-  <!-- SLIDE 2 -->
   <section class="slide" data-slide="2">
     <header>
       <img src="images/logo.png" alt="Savory Food Fusions">
@@ -106,10 +99,36 @@
     </header>
     <div class="grid">
       <div class="group">
+        <div class="photo"><span class="badge">Asian</span><img src="images/tray-asian-chicken.jpg" alt=""></div>
+        <div><h2>ASIAN CHICKEN</h2><div class="sub">pick your style · with rice</div>
+          <ul><li>General Tso <small>sweet &amp; spicy, toasted chiles</small></li><li>Teriyaki <small>sweet soy, green onion</small></li><li>Orange <small>sticky citrus glaze</small></li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Mediterranean</span><img src="images/tray-gyro.jpg" alt=""></div>
+        <div><h2>CHICKEN GYRO</h2><div class="sub">wrapped in warm pita</div>
+          <ul><li>Seasoned chicken &amp; tzatziki</li><li>Lettuce, tomato, cucumber</li><li>Red onion</li></ul></div>
+      </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Rice</span><img src="images/tray-rice.jpg" alt=""></div>
+        <div><h2>RICE PLATES</h2><div class="sub">pick your rice</div>
+          <ul><li>Signature Dominican Rice</li><li>White Rice</li><li>Fried Rice <small>egg, corn, carrots, green beans</small></li></ul></div>
+      </div>
+      <div class="group">
         <div class="photo"><span class="badge">Italian</span><img src="images/tray-pasta.jpg" alt=""></div>
         <div><h2>PASTA</h2><div class="sub">pick your pasta</div>
           <ul><li>Tuscan Pasta</li><li>Creamy Mac &amp; Cheese</li><li>Meat Sauce Pasta</li></ul></div>
       </div>
+    </div>
+    <footer><span class="lbl">Drinks &amp; Extras</span><span>Snapple <i class="sep">·</i> Bottled Water <i class="sep">·</i> Candied Grape</span><span class="dots"><i></i><i class=on></i><i></i></span></footer>
+  </section>
+  <section class="slide" data-slide="3">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="grid">
       <div class="group">
         <div class="photo"><span class="badge">Salads</span><img src="images/tray-salads.jpg" alt=""></div>
         <div><h2>SALADS</h2><div class="sub">pick your salad</div>
@@ -125,14 +144,15 @@
         <div><h2>SNACKS</h2><div class="sub">pick your snack</div>
           <ul><li>Chicken Bites</li><li>Pizza Bagel <small>cheese or pepperoni</small></li><li>Cheese Quesadilla <small>add chicken or shredded beef</small></li></ul></div>
       </div>
+      <div class="group">
+        <div class="photo"><span class="badge">Sauces</span><img src="images/tray-sauces.jpg" alt=""></div>
+        <div><h2>SAUCES &amp; SALSAS</h2><div class="sub">made in house</div>
+          <ul><li>Jerk Sauce</li><li>Pico de Gallo</li><li>Avocado Salsa <i class="sep">·</i> Spicy Salsa</li></ul></div>
+      </div>
     </div>
-    <footer>
-      <span class="lbl">Drinks &amp; Extras</span><span>Snapple <i class="sep">·</i> Bottled Water <i class="sep">·</i> Candied Grape</span>
-      <span class="dots"><i></i><i class="on"></i></span>
-    </footer>
+    <footer><span class="lbl">Catering coming soon</span><span>Party trays, drop-off &amp; full-service — follow for the launch date</span><span class="dots"><i></i><i></i><i class=on></i></span></footer>
   </section>
 </div>
-
 <script>
   // Fit the 1920x1080 stage to any screen (TV, laptop, tablet)
   function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById('stage').style.setProperty('--s',s);}
@@ -142,7 +162,7 @@
   var q=new URLSearchParams(location.search),slides=document.querySelectorAll('.slide'),i=0,
       lock=parseInt(q.get('slide'),10),secs=parseInt(q.get('secs'),10)||10;
   function show(n){slides.forEach(function(s,k){s.classList.toggle('active',k===n)});i=n;}
-  if(lock>=1&&lock<=slides.length){show(lock-1);}
+  if(lock>=1&&lock<=slides.length){slides.forEach(function(s){s.style.transition="none"});show(lock-1);}
   else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
   // Space/arrow keys step manually (handy on a remote with a keyboard or a laptop)
   addEventListener('keydown',function(e){if(e.key===' '||e.key==='ArrowRight')show((i+1)%slides.length);if(e.key==='ArrowLeft')show((i-1+slides.length)%slides.length);});

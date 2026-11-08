@@ -159,6 +159,57 @@
       <div class="spacer"></div>
       <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
     </header>
+    <div class="gtitle"><h2>ASIAN CHICKEN</h2><span class="sub">pick your style · served with rice</span>
+      <span class="qrmini"><span>scan for the<br>full menu</span><img src="images/qr-website.png" alt=""></span></div>
+    <div class="items">
+      <div class="item"><div class="photo"><span class="badge">Asian</span><img src="images/asian-general-tso.jpg" alt=""></div>
+        <div class="cap"><h3>General Tso Chicken</h3><div class="note">sweet &amp; spicy, toasted chiles</div></div></div>
+      <div class="item"><div class="photo"><span class="badge">Asian</span><img src="images/asian-teriyaki.jpg" alt=""></div>
+        <div class="cap"><h3>Teriyaki Chicken</h3><div class="note">sweet soy, green onion</div></div></div>
+      <div class="item"><div class="photo"><span class="badge">Asian</span><img src="images/asian-orange.jpg" alt=""></div>
+        <div class="cap"><h3>Orange Chicken</h3><div class="note">sticky citrus glaze</div></div></div>
+    </div>
+  </section>
+  <section class="slide">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="gtitle"><h2>RICE PLATES</h2><span class="sub">pick your rice</span>
+      <span class="qrmini"><span>scan for the<br>full menu</span><img src="images/qr-website.png" alt=""></span></div>
+    <div class="items">
+      <div class="item"><div class="photo"><span class="badge">Rice</span><img src="images/rice-dominican.jpg" alt=""></div>
+        <div class="cap"><h3>Signature Dominican Rice</h3></div></div>
+      <div class="item"><div class="photo"><span class="badge">Rice</span><img src="images/rice-white.jpg" alt=""></div>
+        <div class="cap"><h3>White Rice</h3></div></div>
+      <div class="item"><div class="photo"><span class="badge">Rice</span><img src="images/rice-fried.jpg" alt=""></div>
+        <div class="cap"><h3>Fried Rice</h3><div class="note">egg, corn, carrots, green beans</div></div></div>
+    </div>
+  </section>
+  <section class="slide">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
+    <div class="gtitle"><h2>CHICKEN GYRO</h2><span class="sub">wrapped in warm pita</span>
+      <span class="qrmini"><span>scan for the<br>full menu</span><img src="images/qr-website.png" alt=""></span></div>
+    <div class="items" style="grid-template-columns:1.25fr 1fr">
+      <div class="item"><div class="photo" style="height:100%"><span class="badge">Mediterranean</span><img src="images/chicken-gyro.jpg" alt=""></div></div>
+      <div class="item"><div class="photo"><span class="badge">Mediterranean</span><img src="images/tray-gyro.jpg" alt=""></div>
+        <div class="cap"><h3>Chicken Gyro</h3><div class="note">Seasoned chicken, lettuce, tomato, cucumber &amp; red onion in warm pita with house tzatziki</div></div></div>
+    </div>
+  </section>
+  <section class="slide">
+    <header>
+      <img src="images/logo.png" alt="Savory Food Fusions">
+      <div class="brand">SAVORY FOOD FUSIONS<small>El Paso · street food, remixed</small></div>
+      <div class="spacer"></div>
+      <div class="hdr-right"><div class="title">THE <span>MENU</span></div><div class="handle">@savory_food_fusions</div></div>
+    </header>
     <div class="gtitle"><h2>PASTA</h2><span class="sub">pick your pasta</span>
       <span class="qrmini"><span>scan for the<br>full menu</span><img src="images/qr-website.png" alt=""></span></div>
     <div class="items">
@@ -230,6 +281,6 @@
   addEventListener('resize',fit);fit();
   var q=new URLSearchParams(location.search),slides=document.querySelectorAll('.slide'),i=0,lock=parseInt(q.get('slide'),10),secs=parseInt(q.get('secs'),10)||10;
   function show(n){slides.forEach(function(s,k){s.classList.toggle('active',k===n)});i=n;}
-  if(lock>=1&&lock<=slides.length){show(lock-1);}else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
+  if(lock>=1&&lock<=slides.length){slides.forEach(function(s){s.style.transition="none"});show(lock-1);}else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
   addEventListener('keydown',function(e){if(e.key===' '||e.key==='ArrowRight')show((i+1)%slides.length);if(e.key==='ArrowLeft')show((i-1+slides.length)%slides.length);});
 </script></body></html>

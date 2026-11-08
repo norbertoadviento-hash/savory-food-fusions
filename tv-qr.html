@@ -101,6 +101,6 @@
   addEventListener('resize',fit);fit();
   var q=new URLSearchParams(location.search),slides=document.querySelectorAll('.slide'),i=0,lock=parseInt(q.get('slide'),10),secs=parseInt(q.get('secs'),10)||10;
   function show(n){slides.forEach(function(s,k){s.classList.toggle('active',k===n)});i=n;}
-  if(lock>=1&&lock<=slides.length){show(lock-1);}else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
+  if(lock>=1&&lock<=slides.length){slides.forEach(function(s){s.style.transition="none"});show(lock-1);}else{setInterval(function(){show((i+1)%slides.length)},secs*1000);}
   addEventListener('keydown',function(e){if(e.key===' '||e.key==='ArrowRight')show((i+1)%slides.length);if(e.key==='ArrowLeft')show((i-1+slides.length)%slides.length);});
 </script></body></html>
